@@ -120,12 +120,48 @@ def sorting_selection(arr) :
     selectionL = copy.copy(arr)
     selection(selectionL)
     printArr(selectionL, isSorted=True)
+    
+def runSorts(arr, count) :
+    if count == 0:
+        print('\n\n\n\n\nMerge sorting :')
+        sorting_merge(arr)
+    elif count == 1:
+        print('\n\n\n\n\nBogo sorting :')
+        sorting_bogo(arr)
+    elif count == 2:
+        print('\n\n\n\n\nBubble sorting :')
+        sorting_bubble(arr)
+    elif count == 3:
+        print('\n\n\n\n\nInsertion sorting :')
+        sorting_insertion(arr)
+    elif count == 4:
+        print('\n\n\n\n\nQuick sorting :')
+        sorting_quick(arr)
+    elif count == 5:
+        print('\n\n\n\n\nSelection sorting :')
+        sorting_selection(arr)
+    else : raise IndexError
 
+def update(num) :
+    genArr(arr, count=num)
+    printArr(arr, isSorted=False)
+    runSorts(arr, count=0)
+    print('\n'*5)
+    runSorts(arr, count=1)
+    print('\n'*5)
+    runSorts(arr, count=2)
+    print('\n'*5)
+    runSorts(arr, count=3)
+    print('\n'*5)
+    runSorts(arr, count=4)
+    print('\n'*5)
+    runSorts(arr, count=5)
+    print('\n'*5)
+    return
 #main driver
 
-genArr(arr, count=0)
-printArr(arr, isSorted=False)
-
-sorting_merge(arr)
-
-
+update(0)
+time.sleep(5)
+update(1)
+time.sleep(5)
+update(2)
